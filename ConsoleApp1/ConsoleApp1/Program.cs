@@ -28,10 +28,10 @@ namespace ConsoleApp3
 
             Console.WriteLine();
             Console.WriteLine("Задание B");
-            double[] z = new double[5] { 0.35, 1.28, 3.51, 5.21, 4.16 };
-            for (int i = 0; i <= 4; i++)
+            double[] z = new double[] { 0.35, 1.28, 3.51, 5.21, 4.16 };
+            foreach (double element in z)
             {
-                formula(z[i], a, b);
+                formula(element, a, b);
             }
 
 
