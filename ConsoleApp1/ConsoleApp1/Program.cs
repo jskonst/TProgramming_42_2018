@@ -20,8 +20,12 @@ namespace ConsoleApp3
             Console.WriteLine("Задание А");
             double a = 1.35;
             double b = 0.98;
+            double xn = 1.14;
+            double xk = 4.24;
+            double dx = 0.62;
 
-            for (double x = 1.14; x <= 4.24; x = x + 0.62)
+
+            for (double x=xn; x <= xk; x = x + dx)
             {
                 formula(x, a, b);
             }
