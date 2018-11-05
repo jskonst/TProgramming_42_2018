@@ -2,15 +2,14 @@
 
 namespace ConsoleApp3
 {
-    class Program
+    public class Program
     {
-
-        static void formula(double x, double a, double b)
+        
+        public static double formula(double x, double a, double b)
         {
 
-            double y = Math.Pow(a * x + b, (1 / 3)) / (Math.Pow(Math.Log10(x), 2));
-
-            Console.WriteLine($"При х = {x} функция y = {Math.Round(y, 3)}");
+            return(Math.Pow(a * x + b, (1 / 3)) / (Math.Pow(Math.Log10(x), 2)));
+                  
         }
 
         static void Main()
@@ -27,7 +26,7 @@ namespace ConsoleApp3
 
             for (double x=xn; x <= xk; x = x + dx)
             {
-                formula(x, a, b);
+                Console.WriteLine($" x={x} y={Math.Round(formula(x, a, b), 3)}");
             }
 
             Console.WriteLine();
@@ -35,7 +34,7 @@ namespace ConsoleApp3
             double[] z = new double[] { 0.35, 1.28, 3.51, 5.21, 4.16 };
             foreach (double element in z)
             {
-                formula(element, a, b);
+                Console.WriteLine($" X={element} y={Math.Round(formula(element, a, b), 3)} ");
             }
 
 
