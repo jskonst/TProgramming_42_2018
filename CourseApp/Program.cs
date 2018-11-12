@@ -11,9 +11,7 @@ namespace CourseApp
          Console.WriteLine("Волошин Константин");
 
          double a = 1.2;
-         double b = 0.48;
-            
-
+         double b = 0.48;  
          double xn = 0.7;
          double xk = 2.2;
          double dx = 0.3;
@@ -23,8 +21,7 @@ namespace CourseApp
          
          for( double x=xn; x<xk; x+=dx)
             {
-               Console.WriteLine (Fan(x,a,b));
-                
+               Console.WriteLine (Fan(x,a,b));                
             }
 
           Console.WriteLine ("Задание B");
@@ -37,8 +34,7 @@ namespace CourseApp
         }   
 
         public static double Fan(double x, double a, double b)
-        { 
-
+        {
          double y = (b*b*b + Math.Sin(a*x)*Math.Sin(a*x)) / (Math.Acos(x*b*x) + Math.Exp(-x/2));
          return y;
         }
