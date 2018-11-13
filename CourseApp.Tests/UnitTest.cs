@@ -1,10 +1,10 @@
 using System;
 using Xunit;
-using ConsoleApp3;
+using CourseApp;
 
-namespace ConsoleApp3.Tests
+namespace CourseApp.Tests
 {
-    public class UnitTest1
+    public class UnitTest
     {
         double a = 1.35;
         double b = 0.98;
