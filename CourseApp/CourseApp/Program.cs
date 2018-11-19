@@ -1,5 +1,6 @@
 ﻿using System;
 
+   
 namespace CourseApp
 {
     public class Program
@@ -35,11 +36,27 @@ namespace CourseApp
             foreach (double element in z)
             {
                 Console.WriteLine($" X={element} y={Math.Round(formula(element, a, b), 3)} ");
-            }
+            }         
+        
+            Fox one = new Fox(); // вызов 1-ого
+            Fox two = new Fox("Вторая", "Черная"); // вызов 2-ого
+            Fox three = new Fox("Третья", "Белая", 4); // вызов 3-ого
 
+            one.GetInfo();
 
-            Console.ReadKey();
+            one.Age = 5;
+            Console.WriteLine(one.Name);
+            one.GetInfo();
+            one.Age = -1;
+
+            one.GetInfo();
+            two.GetInfo();
+            three.GetInfo();
+            one.fox();
+            one.Mut();
+
+            Console.Read();
         }
-
     }
 }
+
