@@ -26,5 +26,6 @@ namespace CourseApp.Tests
             var result = Program.formula(1.14, 0.0, 0.98);
             Assert.Equal(308.817, result,3);
         }
+
     }
 }

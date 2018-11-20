@@ -2,10 +2,10 @@
 
 namespace CourseApp
 {
-    class Fox
+    public class Fox
     {
         public string Name { get; set; }
-        private int age;
+        public int age;
         public string Color { get; set; }
 
         public int Age
@@ -24,11 +24,11 @@ namespace CourseApp
             }
         }
 
-        public Fox() { Name = ""; Color = "Рыжий"; age = 3; } // 1 конструктор
+        public Fox(): this("Первая", "Рыжая",3) {} // 1 конструктор
 
-        public Fox(string n, string m) { Name = n; Color = m; age = 2; } // 2 конструктор
+        public Fox(string name, string color) : this(name, color, 3) { } // 2 конструктор
 
-        public Fox(string n, string m, int a) { Name = n; Color = m; age = a; } // 3 конструктор
+        public Fox(string name, string color, int age) { Name = name; Color = color; this.age = age; } // 3 конструктор
 
         public void GetInfo()
         {
