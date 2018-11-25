@@ -1,10 +1,10 @@
 ﻿using System;
- 
+
 namespace CourseApp
 {
     public class Program
     {
-
+        
         static void Main(string[] args)
         {
             
@@ -30,6 +30,11 @@ namespace CourseApp
             {
                 Console.WriteLine (Fan(x,a,b));
             }
+
+          Console.WriteLine ("Лабараторная по классам");  
+          NewRabbit ururu = new NewRabbit();
+          ururu.NewRabbitt();
+          ururu.art();
 
         }   
 
