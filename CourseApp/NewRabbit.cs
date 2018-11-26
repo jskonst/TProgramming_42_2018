@@ -3,7 +3,7 @@ using System;
 namespace CourseApp
 {
 
-    class NewRabbit
+    public class NewRabbit
     {      
         public void NewRabbitt()
         {
