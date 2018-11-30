@@ -39,9 +39,9 @@ namespace CourseApp
         {
             Console.WriteLine($"Из-за странного корма все лисы мутировали, покорили мир и сделали людей своими рабами");
         }
-        public void fox()
+        public string fox()
         {
-            Console.WriteLine(@"   
+            return(@"   
                                                                    ,-,
                                                              _.-=;~ /_
                                                           _-~   '     ;.

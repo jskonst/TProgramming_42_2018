@@ -52,7 +52,8 @@ namespace CourseApp
             one.GetInfo();
             two.GetInfo();
             three.GetInfo();
-            one.fox();
+            string PictureFox = one.fox();
+            Console.WriteLine(PictureFox);
             one.Mut();
 
             Console.Read();
