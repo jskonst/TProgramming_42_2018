@@ -31,11 +31,11 @@ namespace CourseApp
                 Console.WriteLine (Fan(x,a,b));
             }
 
-          Console.WriteLine ("Лабараторная по классам");  
-          NewRabbit ururu = new NewRabbit();
-          ururu.NewRabbitt();
-          ururu.art();
+         
 
+         Menu start = new Menu();
+         start.menu();
+          
         }   
 
         public static double Fan(double x, double a, double b)
@@ -43,7 +43,7 @@ namespace CourseApp
          double y = (b*b*b + Math.Sin(a*x)*Math.Sin(a*x)) / (Math.Acos(x*b*x) + Math.Exp(-x/2));
          return y;
         }
-       
+        
      }
 
 }   
