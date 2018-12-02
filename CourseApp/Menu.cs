@@ -29,7 +29,7 @@ namespace CourseApp
              klet.Add(new Farm(Name));
              Console.WriteLine("----------");
           break;
-          case "Select": 
+          case "Sel": 
              Console.Write ("Введите имя новорожденного кролика: ");
              Name = Console.ReadLine();
              Console.WriteLine("Введите имена родителй кролика: ");
@@ -50,17 +50,26 @@ namespace CourseApp
           case "Info":  int num=1;
              foreach(Farm i in klet)
              {
-                Console.Write($"{num++})");
-                if (i.Pearent1 == null && i.Child == 0)
-                {info.RabbitInfo(i.Name);}
-                else if(i.Pearent1 != null && i.Child == 0) 
-                {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
-                else if(i.Pearent1 == null && i.Child != 0) 
-                {info.RabbitInfo(i.Name,i.Child);}
-                else if(i.Pearent1 != null && i.Child != 0) 
-                {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);}
+                Console.Write($"{num++}) {i.Name}");
              }
              Console.WriteLine("----------");
+          break;   
+          case "Inf":
+             {   Console.Write("Введите имя кролика о котором хотите унать: ");
+                 Name = Console.ReadLine();
+                 foreach(Farm i in klet)
+                 {if(i.Name==Name){
+                 if (i.Pearent1 == null && i.Child == 0)
+                 {info.RabbitInfo(i.Name);}
+                 else if(i.Pearent1 != null && i.Child == 0) 
+                 {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
+                 else if(i.Pearent1 == null && i.Child != 0) 
+                 {info.RabbitInfo(i.Name,i.Child);}
+                 else if(i.Pearent1 != null && i.Child != 0) 
+                 {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);} 
+                 }}
+                 Console.WriteLine("----------");
+             }
           break;
           default: if(go != "Stop") {  
             Console.WriteLine("Такой команды не существует. help - узнать список команд.");}
@@ -75,8 +84,9 @@ namespace CourseApp
             Stop - закончить программу;
             Art - вывести рисунок кроликов;
             Buy - купить нового кролика;
-            Select - выростить нового кролика;
-            Info - узнать ситуацию по кроликам
+            Sel - выростить нового кролика;
+            Info - узнать имена всех кроликов
+            Inf - узнать о конкретном кролике
             ");
         }
         static void art()

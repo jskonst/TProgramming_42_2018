@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 
 namespace CourseApp
 {
-  
     public class Farm
     {    
         public string Name;
@@ -20,7 +18,5 @@ namespace CourseApp
             this.Pearent2=p2;
             this.Child=ch;
         }
-
-            
     }
 }
