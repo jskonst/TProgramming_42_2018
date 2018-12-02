@@ -4,12 +4,12 @@ namespace CourseApp
 {
     public class Rabbit
     {
-        public void RabbitInfo(string Name, string[] Pearent, string[] Child)
+        public void RabbitInfo(string Name, string Pearent1,string Pearent2, string[] Child)
         {
-            Console.Write($"Имя {Name} Родители: {Pearent[1]} и {Pearent[2]} Дети: ");            
+            Console.Write($"Имя {Name} Родители: {Pearent1} и {Pearent2} Дети: ");            
             foreach (var i in Child) {Console.WriteLine(Child[Convert.ToInt32(i)]);}
         }
-        public void RabbitInfo(string Name, string[] Pearent) {Console.WriteLine($"Имя {Name} Родители: {Pearent[1]} и {Pearent[2]}");}
+        public void RabbitInfo(string Name, string Pearent1,string Pearent2) {Console.WriteLine($"Имя {Name} Родители: {Pearent1} и {Pearent2}");}
         public void RabbitInfo(string Name) {Console.WriteLine($"Имя {Name}");}  
         public void RabbitInfo() {Console.WriteLine("eror");}
     }

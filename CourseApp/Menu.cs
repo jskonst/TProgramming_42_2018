@@ -1,17 +1,20 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections;
 
 namespace CourseApp
 {
     public class Menu
     {
         public void menu()
-        { 
+        { //int j=0;
         var info = new Rabbit();
        // var farm = new Farm();
-       List<Farm> farm= new List<Farm>();
         string go;
+        string Name;
+        string Pearent1;
+        string Pearent2;
+        ArrayList klet= new ArrayList();
+
         Console.WriteLine ("Добро пожаловать на кроличью ферму!");
         do {
         go = Console.ReadLine();
@@ -21,25 +24,32 @@ namespace CourseApp
             help();
           break;
           case "Buy":
-          Console.WriteLine ("Введите имя нового кролика");
-          string Name = Console.ReadLine();
-          farm.Add(new Farm(Name));
+          Console.Write("Введите имя купленного кролика: ");
+          Name = Console.ReadLine();
+          klet.Add(new Farm(Name));
           break;
           case "Select":
-          // Скоро будет
+          Console.Write ("Введите имя новорожденного кролика: ");
+          Name = Console.ReadLine();
+          Console.WriteLine("Введите имена родителй кролика: ");
+          Pearent1=Console.ReadLine();
+          Pearent2=Console.ReadLine();
+          klet.Add(new Farm(Name,Pearent1,Pearent2));
           break;
           case "Art":
           art();
           break;
-          case "Info":  
-          foreach (var i in farm)
+          case "Info":
+          foreach(Farm i in klet)
             {
-                info.RabbitInfo(i.Name);
+                if (i.Pearent1 != null)
+                {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
+                else {info.RabbitInfo(i.Name);}
             }
           break;
-          default:
-            Console.WriteLine("Такой команды не существует. help - узнать список команд.");
-          break; // Поправить вывод при стопе проги
+          default: if(go != "Stop") {  
+            Console.WriteLine("Такой команды не существует. help - узнать список команд.");}
+          break;
           }} 
           while (go != "Stop");      
         }
