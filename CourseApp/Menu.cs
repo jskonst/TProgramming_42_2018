@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace CourseApp
 {
@@ -38,8 +39,7 @@ namespace CourseApp
              klet.Add(new Farm(Name,Pearent1,Pearent2));
                foreach(Farm i in klet)
              {                
-                if(Pearent1==i.Name||Pearent2==i.Name){i.Child=i.Child+1;};
-                
+                if(Pearent1==i.Name||Pearent2==i.Name){i.Child.Add(Name);};
              }
              Console.WriteLine("----------");
           break;
@@ -50,7 +50,7 @@ namespace CourseApp
           case "Info":  int num=1;
              foreach(Farm i in klet)
              {
-                Console.Write($"{num++}) {i.Name}");
+                Console.WriteLine($"{num++}) {i.Name}");
              }
              Console.WriteLine("----------");
           break;   
@@ -59,13 +59,13 @@ namespace CourseApp
                  Name = Console.ReadLine();
                  foreach(Farm i in klet)
                  {if(i.Name==Name){
-                 if (i.Pearent1 == null && i.Child == 0)
+                  if (i.Pearent1 == null && i.Child.Count == 0)
                  {info.RabbitInfo(i.Name);}
-                 else if(i.Pearent1 != null && i.Child == 0) 
+                  else if(i.Pearent1 != null && i.Child.Count == 0) 
                  {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
-                 else if(i.Pearent1 == null && i.Child != 0) 
+                  else if(i.Pearent1 == null && i.Child.Count != 0) 
                  {info.RabbitInfo(i.Name,i.Child);}
-                 else if(i.Pearent1 != null && i.Child != 0) 
+                  else if(i.Pearent1 != null && i.Child.Count != 0) 
                  {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);} 
                  }}
                  Console.WriteLine("----------");
