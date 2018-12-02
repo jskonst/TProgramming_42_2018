@@ -5,10 +5,9 @@ namespace CourseApp
 {
     public class Menu
     {
-        public void menu()
-        { //int j=0;
+      public void menu()
+        { 
         var info = new Rabbit();
-       // var farm = new Farm();
         string go;
         string Name;
         string Pearent1;
@@ -19,41 +18,56 @@ namespace CourseApp
         do {
         go = Console.ReadLine();
         switch (go)
-          {
-          case "help":
-            help();
+        {
+          case "help": 
+             help();
+             Console.WriteLine("----------");
           break;
-          case "Buy":
-          Console.Write("Введите имя купленного кролика: ");
-          Name = Console.ReadLine();
-          klet.Add(new Farm(Name));
+          case "Buy": 
+             Console.Write("Введите имя купленного кролика: ");
+             Name = Console.ReadLine();
+             klet.Add(new Farm(Name));
+             Console.WriteLine("----------");
           break;
-          case "Select":
-          Console.Write ("Введите имя новорожденного кролика: ");
-          Name = Console.ReadLine();
-          Console.WriteLine("Введите имена родителй кролика: ");
-          Pearent1=Console.ReadLine();
-          Pearent2=Console.ReadLine();
-          klet.Add(new Farm(Name,Pearent1,Pearent2));
+          case "Select": 
+             Console.Write ("Введите имя новорожденного кролика: ");
+             Name = Console.ReadLine();
+             Console.WriteLine("Введите имена родителй кролика: ");
+             Pearent1=Console.ReadLine();
+             Pearent2=Console.ReadLine();
+             klet.Add(new Farm(Name,Pearent1,Pearent2));
+               foreach(Farm i in klet)
+             {                
+                if(Pearent1==i.Name||Pearent2==i.Name){i.Child=i.Child+1;};
+                
+             }
+             Console.WriteLine("----------");
           break;
-          case "Art":
-          art();
+          case "Art": 
+             art();
+             Console.WriteLine("----------");
           break;
-          case "Info":
-          foreach(Farm i in klet)
-            {
-                if (i.Pearent1 != null)
+          case "Info":  int num=1;
+             foreach(Farm i in klet)
+             {
+                Console.Write($"{num++})");
+                if (i.Pearent1 == null && i.Child == 0)
+                {info.RabbitInfo(i.Name);}
+                else if(i.Pearent1 != null && i.Child == 0) 
                 {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
-                else {info.RabbitInfo(i.Name);}
-            }
+                else if(i.Pearent1 == null && i.Child != 0) 
+                {info.RabbitInfo(i.Name,i.Child);}
+                else if(i.Pearent1 != null && i.Child != 0) 
+                {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);}
+             }
+             Console.WriteLine("----------");
           break;
           default: if(go != "Stop") {  
             Console.WriteLine("Такой команды не существует. help - узнать список команд.");}
           break;
-          }} 
-          while (go != "Stop");      
+        }} 
+        while (go != "Stop");      
         }
-
        static void help() 
         {
            Console.WriteLine(@"
@@ -72,9 +86,5 @@ namespace CourseApp
             -----(':'=)----(':'=)---(=';'=)---(=':')----(=':')
             --(')('),,)-(')('),,)---(')_(')---(..(')(')-(..(')(')  ");
         }
-        
-
-       
     }
 }
-
