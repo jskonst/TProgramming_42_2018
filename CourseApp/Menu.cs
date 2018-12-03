@@ -6,18 +6,14 @@ namespace CourseApp
 {
     public class Menu
     {
-      public void menu()
+      public  Rabbit info = new Rabbit();
+   //   public  string go;
+      public  string Name;
+      public  string Pearent1;
+      public  string Pearent2;
+      public  ArrayList klet= new ArrayList();
+      public void menu(string go)
         { 
-        var info = new Rabbit();
-        string go;
-        string Name;
-        string Pearent1;
-        string Pearent2;
-        ArrayList klet= new ArrayList();
-
-        Console.WriteLine ("Добро пожаловать на кроличью ферму!");
-        do {
-        go = Console.ReadLine();
         switch (go)
         {
           case "help": 
@@ -69,13 +65,12 @@ namespace CourseApp
                  {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);} 
                  }}
                  Console.WriteLine("----------");
-             }
-          break;
+             
+          break;}
           default: if(go != "Stop") {  
             Console.WriteLine("Такой команды не существует. help - узнать список команд.");}
           break;
-        }} 
-        while (go != "Stop");      
+        }     
         }
        static void help() 
         {

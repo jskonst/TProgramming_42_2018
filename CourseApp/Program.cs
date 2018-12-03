@@ -30,12 +30,14 @@ namespace CourseApp
             {
                 Console.WriteLine (Fan(x,a,b));
             }
-
+          Console.WriteLine ("Кроличья ферма!");
          
-
-         Menu start = new Menu();
-         start.menu();
-          
+          string go;
+          Menu start = new Menu();
+          do{
+          go=Console.ReadLine();
+          start.menu(go);
+          }while(go!="Stop");
         }   
 
         public static double Fan(double x, double a, double b)

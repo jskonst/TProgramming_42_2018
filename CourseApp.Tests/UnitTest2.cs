@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using CourseApp;
+using System.Collections.Generic;
 
 namespace CourseApp.Tests
 {
@@ -9,41 +10,48 @@ namespace CourseApp.Tests
         [Fact]
         public void Test1()
         {
-            Rabbit krosh = new Rabbit("momo","rad",3);
-            var name = krosh.name;
-            var color = krosh.color;
-            var age = krosh.age;
-                
-            Assert.Equal("momo",name);
-            Assert.Equal("rad",color);
-            Assert.Equal(3,age);
+            var krosh = new Rabbit();
+            var N ="momo";
+            krosh.RabbitInfo(N);
+            Assert.Equal("momo",N);
         }
-
         [Fact]
         public void Test2()
         {
-            Rabbit krosh = new Rabbit("rar","grin",1);
-            var name = krosh.name;
-            var color = krosh.color;
-            var age = krosh.age;
-                
-            Assert.Equal("rar",name);
-            Assert.Equal("grin",color);
-            Assert.Equal(1,age);
+            var krosh = new Rabbit();
+            var N ="momo";
+            var P1 = "mu";
+            var P2 = "nu";
+            krosh.RabbitInfo(N);
+            Assert.Equal("momo",N);
+            Assert.Equal("mu",P1);
+            Assert.Equal("nu",P2);
         }
-        
         [Fact]
         public void Test3()
         {
-            Rabbit krosh = new Rabbit("ggwp","blue",9);
-            var name = krosh.name;
-            var color = krosh.color;
-            var age = krosh.age;
-                
-            Assert.Equal("ggwp",name);
-            Assert.Equal("blue",color);
-            Assert.Equal(9,age);
-       }
-        
+            var krosh = new Rabbit();
+            var N ="momo";
+            var P1 = "mu";
+            var P2 = "nu";
+            List<string> ch=new List<string> {"Mura","Gura","Fedya"}; 
+            krosh.RabbitInfo(N,P1,P2,ch);
+            Assert.Equal("momo",N);
+            Assert.Equal("mu",P1);
+            Assert.Equal("nu",P2);
+            Assert.Equal("Mura",ch[0]);
+            Assert.Equal("Gura",ch[1]);
+            Assert.Equal("Fedya",ch[2]);
+        }
+        // На следующем тесте почему-то все зависает не понял пока почему...
+/*        [Fact]
+        public void Test4()
+        {
+            Menu ferma = new Menu();
+            string go="Buy";
+            ferma.Name = "Boo";
+            ferma.menu(go);
+            Assert.Equal("Boo",ferma.klet[1]);
+        }*/
     }
 }
