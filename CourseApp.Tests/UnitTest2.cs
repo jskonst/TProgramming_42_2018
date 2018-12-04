@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using CourseApp;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace CourseApp.Tests
 {
@@ -43,15 +44,19 @@ namespace CourseApp.Tests
             Assert.Equal("Gura",ch[1]);
             Assert.Equal("Fedya",ch[2]);
         }
-        // На следующем тесте почему-то все зависает не понял пока почему...
-/*        [Fact]
+        [Fact]
         public void Test4()
         {
             Menu ferma = new Menu();
-            string go="Buy";
             ferma.Name = "Boo";
-            ferma.menu(go);
-            Assert.Equal("Boo",ferma.klet[1]);
-        }*/
+            Assert.Equal("Boo",ferma.Name);
+        } [Fact]
+        //следующий тест не  рабочий
+        public void Test5()
+        {
+            Menu ferma = new Menu();
+            ferma.klet.Add("Boo");
+            Assert.Equal("Boo",ferma.klet[0]);
+        }
     }
 }

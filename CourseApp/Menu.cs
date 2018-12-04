@@ -7,10 +7,9 @@ namespace CourseApp
     public class Menu
     {
       public  Rabbit info = new Rabbit();
-   //   public  string go;
-      public  string Name;
-      public  string Pearent1;
-      public  string Pearent2;
+      public  string Name {get;set;}
+      public  string Pearent1{get;set;}
+      public  string Pearent2{get;set;}
       public  ArrayList klet= new ArrayList();
       public void menu(string go)
         { 
@@ -18,13 +17,11 @@ namespace CourseApp
         {
           case "help": 
              help();
-             Console.WriteLine("----------");
           break;
           case "Buy": 
              Console.Write("Введите имя купленного кролика: ");
              Name = Console.ReadLine();
              klet.Add(new Farm(Name));
-             Console.WriteLine("----------");
           break;
           case "Sel": 
              Console.Write ("Введите имя новорожденного кролика: ");
@@ -37,40 +34,41 @@ namespace CourseApp
              {                
                 if(Pearent1==i.Name||Pearent2==i.Name){i.Child.Add(Name);};
              }
-             Console.WriteLine("----------");
           break;
           case "Art": 
              art();
-             Console.WriteLine("----------");
           break;
           case "Info":  int num=1;
              foreach(Farm i in klet)
              {
-                Console.WriteLine($"{num++}) {i.Name}");
+             Console.WriteLine($"{num++}) {i.Name}");
              }
-             Console.WriteLine("----------");
           break;   
           case "Inf":
-             {   Console.Write("Введите имя кролика о котором хотите унать: ");
-                 Name = Console.ReadLine();
-                 foreach(Farm i in klet)
-                 {if(i.Name==Name){
-                  if (i.Pearent1 == null && i.Child.Count == 0)
-                 {info.RabbitInfo(i.Name);}
-                  else if(i.Pearent1 != null && i.Child.Count == 0) 
-                 {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
-                  else if(i.Pearent1 == null && i.Child.Count != 0) 
-                 {info.RabbitInfo(i.Name,i.Child);}
-                  else if(i.Pearent1 != null && i.Child.Count != 0) 
-                 {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);} 
-                 }}
-                 Console.WriteLine("----------");
-             
-          break;}
+             {  
+             Console.Write("Введите имя кролика о котором хотите унать: ");
+             Name = Console.ReadLine();
+             foreach(Farm i in klet)
+             {
+               if(i.Name==Name)
+               {
+               if (i.Pearent1 == null && i.Child.Count == 0)
+               {info.RabbitInfo(i.Name);}
+               else if(i.Pearent1 != null && i.Child.Count == 0) 
+               {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
+               else if(i.Pearent1 == null && i.Child.Count != 0) 
+               {info.RabbitInfo(i.Name,i.Child);}
+               else if(i.Pearent1 != null && i.Child.Count != 0) 
+               {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);} 
+               }
+             }
+             }
+          break;
           default: if(go != "Stop") {  
             Console.WriteLine("Такой команды не существует. help - узнать список команд.");}
           break;
-        }     
+        } 
+             Console.WriteLine("----------"); 
         }
        static void help() 
         {
