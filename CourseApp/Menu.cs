@@ -4,12 +4,9 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-    public class Menu
+    public class Menu:Farm
     {
       public  Rabbit info = new Rabbit();
-      public  string Name {get;set;}
-      public  string Pearent1{get;set;}
-      public  string Pearent2{get;set;}
       public  ArrayList klet= new ArrayList();
       public void menu(string go)
         { 

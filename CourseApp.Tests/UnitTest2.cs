@@ -50,13 +50,23 @@ namespace CourseApp.Tests
             Menu ferma = new Menu();
             ferma.Name = "Boo";
             Assert.Equal("Boo",ferma.Name);
-        } [Fact]
-        //следующий тест не  рабочий
+        } [Fact]    
         public void Test5()
         {
             Menu ferma = new Menu();
             ferma.klet.Add("Boo");
             Assert.Equal("Boo",ferma.klet[0]);
+        }
+        public void Test6()
+        {
+            Menu ferma = new Menu();
+            ferma.menu("Stl");
+            ferma.Name="Boo";
+            ferma.Pearent1="Buu";
+            ferma.Pearent2="Buuu";
+            Assert.Equal("Boo",ferma.klet[0]);
+            Assert.Equal("Buu",ferma.klet[0]);
+            Assert.Equal("Buuu",ferma.klet[0]);
         }
     }
 }

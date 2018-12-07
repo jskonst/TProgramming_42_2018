@@ -8,7 +8,6 @@ namespace CourseApp
         public List<string> Child=new List<string>();
         public string Name{get;set;}
         public string Pearent1 {get;set;}
-        private string pearent2{get;set;}
         public string Pearent2 {get;set;}
         
         public  Farm() {}
