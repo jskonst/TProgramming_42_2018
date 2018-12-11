@@ -4,8 +4,27 @@ namespace CourseApp
 {
     public class Fox
     {
+        private int age;
+
+        public Fox()
+            : this("Первая", "Рыжая", 3)
+        {
+        } // 1 конструктор
+
+        public Fox(string name, string color)
+            : this(name, color, 3)
+        {
+        } // 2 конструктор
+
+        public Fox(string name, string color, int age)
+        {
+            Name = name;
+            Color = color;
+            this.age = age;
+        } // 3 конструктор
+
         public string Name { get; set; }
-        public int age;
+
         public string Color { get; set; }
 
         public int Age
@@ -14,21 +33,15 @@ namespace CourseApp
             {
                 return age;
             }
+
             set
             {
                 if (value > 0)
                 {
                     this.age = value;
                 }
-
             }
         }
-
-        public Fox(): this("Первая", "Рыжая",3) {} // 1 конструктор
-
-        public Fox(string name, string color) : this(name, color, 3) { } // 2 конструктор
-
-        public Fox(string name, string color, int age) { Name = name; Color = color; this.age = age; } // 3 конструктор
 
         public void GetInfo()
         {
@@ -39,9 +52,10 @@ namespace CourseApp
         {
             Console.WriteLine($"Из-за странного корма все лисы мутировали, покорили мир и сделали людей своими рабами");
         }
-        public string fox()
+
+        public string GetView()
         {
-            return(@"   
+            return @"   
                                                                    ,-,
                                                              _.-=;~ /_
                                                           _-~   '     ;.
@@ -59,7 +73,7 @@ namespace CourseApp
     _,'' . .,/',-~    d888P'                    88'  88|
  _.'~  . .,:oP'        ?88b              _..--- 88.--'8b.--..__
 :     ...' 88o __,------.88o ...__..._.=~- .    `~~   `~~      ~-._ Seal _.
-`.;;;:='    ~~            ~~~                ~-    -       -   -");
+`.;;;:='    ~~            ~~~                ~-    -       -   -";
         }
     }
 }

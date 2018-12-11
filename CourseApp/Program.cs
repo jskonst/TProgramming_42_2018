@@ -1,19 +1,15 @@
 ﻿using System;
 
-   
 namespace CourseApp
 {
     public class Program
     {
-        
-        public static double formula(double x, double a, double b)
+        public static double Formula(double x, double a, double b)
         {
-
-            return(Math.Pow(a * x + b, (1 / 3)) / (Math.Pow(Math.Log10(x), 2)));
-                  
+            return Math.Pow((a * x) + b, 1 / 3) / Math.Pow(Math.Log10(x), 2);
         }
 
-        static void Main()
+        private static void Main()
         {
             Console.WriteLine("2 вариант");
             Console.WriteLine();
@@ -23,11 +19,9 @@ namespace CourseApp
             double xn = 1.14;
             double xk = 4.24;
             double dx = 0.62;
-
-
-            for (double x=xn; x <= xk; x = x + dx)
+            for (double x = xn; x <= xk; x = x + dx)
             {
-                Console.WriteLine($" x={x} y={Math.Round(formula(x, a, b), 3)}");
+                Console.WriteLine($" x={x} y={Math.Round(Formula(x, a, b), 3)}");
             }
 
             Console.WriteLine();
@@ -35,9 +29,9 @@ namespace CourseApp
             double[] z = new double[] { 0.35, 1.28, 3.51, 5.21, 4.16 };
             foreach (double element in z)
             {
-                Console.WriteLine($" X={element} y={Math.Round(formula(element, a, b), 3)} ");
-            }         
-        
+                Console.WriteLine($" X={element} y={Math.Round(Formula(element, a, b), 3)} ");
+            }
+
             Fox one = new Fox(); // вызов 1-ого
             Fox two = new Fox("Вторая", "Черная"); // вызов 2-ого
             Fox three = new Fox("Третья", "Белая", 4); // вызов 3-ого
@@ -52,12 +46,11 @@ namespace CourseApp
             one.GetInfo();
             two.GetInfo();
             three.GetInfo();
-            string PictureFox = one.fox();
-            Console.WriteLine(PictureFox);
+            string getview = one.GetView();
+            Console.WriteLine(getview);
             one.Mut();
 
             Console.Read();
         }
     }
 }
-
