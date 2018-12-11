@@ -43,6 +43,17 @@ namespace CourseApp.Tests
         [Fact]
         public void Test4()
         {
+            Fox one = new Fox();
+            var age = one.age;
+            one.age = -1;
+            Assert.Equal(3, age);
+        }
+
+
+
+        [Fact]
+        public void Test5()
+        {
             string fox = @"   
                                                                    ,-,
                                                              _.-=;~ /_
