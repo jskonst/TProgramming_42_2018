@@ -6,7 +6,7 @@ namespace CourseApp
 {
     public class Menu:Farm
     {
-      public  Rabbit info = new Rabbit();
+      public  InfoRabbit info = new InfoRabbit();
       public  ArrayList klet= new ArrayList();
       public void menu(string go)
         { 
@@ -50,13 +50,21 @@ namespace CourseApp
                if(i.Name==Name)
                {
                if (i.Pearent1 == null && i.Child.Count == 0)
-               {info.RabbitInfo(i.Name);}
+               {
+                  info.RabbitInfo(i.Name);
+               }
                else if(i.Pearent1 != null && i.Child.Count == 0) 
-               {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);}
+               {
+                  info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2);
+               }
                else if(i.Pearent1 == null && i.Child.Count != 0) 
-               {info.RabbitInfo(i.Name,i.Child);}
+               {
+                  info.RabbitInfo(i.Name,i.Child);
+               }
                else if(i.Pearent1 != null && i.Child.Count != 0) 
-               {info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);} 
+               {
+                  info.RabbitInfo(i.Name,i.Pearent1,i.Pearent2,i.Child);
+               } 
                }
              }
              }

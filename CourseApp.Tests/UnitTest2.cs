@@ -11,7 +11,7 @@ namespace CourseApp.Tests
         [Fact]
         public void Test1()
         {
-            var krosh = new Rabbit();
+            var krosh = new InfoRabbit();
             var N ="momo";
             krosh.RabbitInfo(N);
             Assert.Equal("momo",N);
@@ -19,7 +19,7 @@ namespace CourseApp.Tests
         [Fact]
         public void Test2()
         {
-            var krosh = new Rabbit();
+            var krosh = new InfoRabbit();
             var N ="momo";
             var P1 = "mu";
             var P2 = "nu";
@@ -31,7 +31,7 @@ namespace CourseApp.Tests
         [Fact]
         public void Test3()
         {
-            var krosh = new Rabbit();
+            var krosh = new InfoRabbit();
             var N ="momo";
             var P1 = "mu";
             var P2 = "nu";
