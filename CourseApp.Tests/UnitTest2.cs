@@ -44,8 +44,8 @@ namespace CourseApp.Tests
         public void Test4()
         {
             Fox one = new Fox();
-            var age = one.age;
-            one.age = -1;
+            var age = one.Age;
+            one.Age = -1;
             Assert.Equal(3, age);
         }
 
