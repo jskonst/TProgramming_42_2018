@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-    public class NewPet : Zoo
+    public class NewPet : Krolik
     {
         public NewPet(string n)
         {

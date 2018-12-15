@@ -8,6 +8,7 @@ namespace CourseApp
     {
     public void MenuZoo(string go)
       {
+         Info pInfo = new Info();
          Krolik krosh = new Krolik();
          switch (go)
          {
@@ -41,19 +42,19 @@ namespace CourseApp
                {
                if (i.Pearent1 == null && i.Child.Count == 0)
                {
-                  PInfo.PetInfo(i.Name, i.Vid);
+                  pInfo.PetInfo(i.Name, i.Vid);
                }
                else if(i.Pearent1 != null && i.Child.Count == 0)
                {
-                  PInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2, i.Vid);
+                  pInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2, i.Vid);
                }
                else if(i.Pearent1 == null && i.Child.Count != 0)
                {
-                  PInfo.PetInfo(i.Name, i.Child, i.Vid);
+                  pInfo.PetInfo(i.Name, i.Child, i.Vid);
                }
                else if(i.Pearent1 != null && i.Child.Count != 0)
                {
-                  PInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2, i.Child, i.Vid);
+                  pInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2, i.Child, i.Vid);
                }
                }
             }
