@@ -57,6 +57,7 @@ namespace CourseApp.Tests
             ferma.klet.Add("Boo");
             Assert.Equal("Boo",ferma.klet[0]);
         }
+        [Fact]
         public void Test6()
         {
             Menu ferma = new Menu();
@@ -67,6 +68,15 @@ namespace CourseApp.Tests
             Assert.Equal("Boo",ferma.klet[0]);
             Assert.Equal("Buu",ferma.klet[0]);
             Assert.Equal("Buuu",ferma.klet[0]);
+        }
+        [Fact]
+        public void Test7()
+        {
+           Menu ferma = new Menu();
+           var go="heip";
+           var osh="Такой команды не существует. help - узнать список команд.";
+           ferma.menu(go); 
+           Assert.Equal(osh);
         }
     }
 }
