@@ -29,33 +29,5 @@ namespace CourseApp
             }
          }
       }
-
-      public void RebbitInfo()
-      {
-         Console.Write("Введите имя кролика о котором хотите унать: ");
-         Name = Console.ReadLine();
-         foreach(NewPet i in Klet)
-            {
-               if(i.Name == Name)
-               {
-               if (i.Pearent1 == null && i.Child.Count == 0)
-               {
-                  PInfo.PetInfo(i.Name);
-               }
-               else if(i.Pearent1 != null && i.Child.Count == 0)
-               {
-                  PInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2);
-               }
-               else if(i.Pearent1 == null && i.Child.Count != 0)
-               {
-                  PInfo.PetInfo(i.Name, i.Child);
-               }
-               else if(i.Pearent1 != null && i.Child.Count != 0)
-               {
-                  PInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2, i.Child);
-               }
-               }
-            }
-      }
    }
 }

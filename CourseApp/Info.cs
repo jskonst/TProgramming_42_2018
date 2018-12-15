@@ -5,28 +5,28 @@ namespace CourseApp
 {
     public class Info
     {
-    public void PetInfo(string name, string pearent1, string pearent2, List<string> child)
+    public void PetInfo(string name, string pearent1, string pearent2, List<string> child, string vid)
         {
-            Console.Write($"Кролик {name}, Родители: {pearent1} и {pearent2}, Дети: ");
+            Console.Write($"{vid} {name}, Родители: {pearent1} и {pearent2}, Дети: ");
             foreach(var i in child)
             {
                 Console.WriteLine($"{i} ");
             }
         }
 
-    public void PetInfo(string name, string pearent1, string pearent2)
+    public void PetInfo(string name, string pearent1, string pearent2, string vid)
         {
-        Console.WriteLine($"Кролик {name}, Родители: {pearent1} и {pearent2},  Детей нет");
+        Console.WriteLine($"{vid} {name}, Родители: {pearent1} и {pearent2},  Детей нет");
         }
 
-    public void PetInfo(string name)
+    public void PetInfo(string name, string vid)
         {
-        Console.WriteLine($"Кролик {name}, Родители: ??? и ???, Дети нет");
+        Console.WriteLine($"{vid} {name}, Родители: ??? и ???, Дети нет");
         }
 
-    public void PetInfo(string name, List<string> child)
+    public void PetInfo(string name, List<string> child, string vid)
         {
-        Console.Write($"Кролик {name}, Родители: ??? и ???, Дети: ");
+        Console.Write($"{vid} {name}, Родители: ??? и ???, Дети: ");
         foreach(var i in child)
             {
             Console.WriteLine($"{i} ");
