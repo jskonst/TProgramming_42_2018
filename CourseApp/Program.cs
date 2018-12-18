@@ -33,7 +33,7 @@ namespace CourseApp
          do
          {
           go = Console.ReadLine();
-          start.MenuZoo(go);
+          start.MenuPets(go);
          }
          while(go != "Stop");
       }

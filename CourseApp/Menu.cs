@@ -4,20 +4,20 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-   public class Menu : Zoo
+   public class Menu : Pet
     {
-    public void MenuZoo(string go)
+    public void MenuPets(string go)
       {
-         Info pInfo = new Info();
          Krolik krosh = new Krolik();
-         switch (go)
+         Info pInfo = new Info();
+         switch(go)
          {
          case "Buy":
          Console.WriteLine("Введите кого вы хоите купить: кролик/мышь");
          Vid = Console.ReadLine();
          if (Vid == "кролик")
          {
-             krosh.BuyKrolik();
+            krosh.BuyKrolik();
          }
 
          break;
@@ -36,37 +36,43 @@ namespace CourseApp
          case "Inf":
          Console.Write("Введите имя животного о котором хотите унать: ");
          Name = Console.ReadLine();
-         foreach(NewPet i in Klet)
+         foreach(string j in Spisok.Keys)
             {
-               if(i.Name == Name)
+               foreach(NewPet i in Spisok.Values)
+               {
+               if(j == Name)
                {
                if (i.Pearent1 == null && i.Child.Count == 0)
                {
-                  pInfo.PetInfo(i.Name, i.Vid);
+                  pInfo.PetInfo(j, i.Vid);
                }
                else if(i.Pearent1 != null && i.Child.Count == 0)
                {
-                  pInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2, i.Vid);
+                  pInfo.PetInfo(j, i.Pearent1, i.Pearent2, i.Vid);
                }
                else if(i.Pearent1 == null && i.Child.Count != 0)
                {
-                  pInfo.PetInfo(i.Name, i.Child, i.Vid);
+                  pInfo.PetInfo(j, i.Child, i.Vid);
                }
                else if(i.Pearent1 != null && i.Child.Count != 0)
                {
-                  pInfo.PetInfo(i.Name, i.Pearent1, i.Pearent2, i.Child, i.Vid);
+                  pInfo.PetInfo(j, i.Pearent1, i.Pearent2, i.Child, i.Vid);
                }
                }
+            }
             }
 
          break;
          case "help":
             Help();
          break;
-         case "Info": int num = 1;
-            foreach(NewPet i in Klet)
+         case "Info":
+            foreach(string i in Spisok.Keys)
             {
-            Console.WriteLine($"{num++}){i.Vid} {i.Name}");
+               foreach (NewPet j in Spisok.Values)
+               {
+               Console.WriteLine($"{Kol++}){j.Vid} {i}");
+               }
             }
 
          break;

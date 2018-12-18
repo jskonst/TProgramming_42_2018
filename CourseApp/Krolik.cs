@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-   public class Krolik : Zoo
+   public class Krolik : Pet
    {
       public void BuyKrolik()
       {
          Console.Write("Введите имя купленного кролика: ");
          Name = Console.ReadLine();
-         Klet.Add(new NewPet(Name));
+         Spisok.Add(Name, new NewPet(Vid));
       }
 
       public void NewKrolik()
@@ -20,12 +20,17 @@ namespace CourseApp
          Console.WriteLine("Введите имена родителй кролика: ");
          Pearent1 = Console.ReadLine();
          Pearent2 = Console.ReadLine();
-         Klet.Add(new NewPet(Name, Pearent1, Pearent2));
-         foreach(NewPet i in Klet)
+         Spisok.Add(Name, new NewPet(Pearent1, Pearent2, "кролик"));
+         foreach(string i in Spisok.Keys)
          {
-            if(Pearent1 == i.Name || Pearent2 == i.Name)
+            if(Pearent1 == i )
             {
-            i.Child.Add(Name);
+            Spisok.Add(Pearent1, new NewPet(Name));
+            }
+
+            if(Pearent2 == i)
+            {
+            Spisok.Add(Pearent2, new NewPet(Name));
             }
          }
       }
