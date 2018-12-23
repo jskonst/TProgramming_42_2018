@@ -10,18 +10,18 @@ namespace CourseApp.Tests
         public void Test1()
         {
             Fox one = new Fox();
-            var name = one.Name;
+            var name = one.FoxName;
             var age = one.Age;
             var color = one.Color;
-            Assert.Equal("Первая", name);
-            Assert.Equal(3, age);
-            Assert.Equal("Рыжая", color);
+            Assert.Equal("Неизвестное", name);
+            Assert.Equal(2, age);
+            Assert.Equal("Прозрачный", color);
         }
         [Fact]
         public void Test2()
         {
             Fox two = new Fox("Вторая", "Чёрная");
-            var name = two.Name;
+            var name = two.FoxName;
             var age = two.Age;
             var color = two.Color;
             Assert.Equal("Вторая", name);
@@ -32,7 +32,7 @@ namespace CourseApp.Tests
         public void Test3()
         {
             Fox three = new Fox("Третья", "Белая", 3);
-            var name = three.Name;
+            var name = three.FoxName;
             var age = three.Age;
             var color = three.Color;
             Assert.Equal("Третья", name);
@@ -46,7 +46,7 @@ namespace CourseApp.Tests
             Fox one = new Fox();
             var age = one.Age;
             one.Age = -1;
-            Assert.Equal(3, age);
+            Assert.Equal(2, age);
         }
 
 
