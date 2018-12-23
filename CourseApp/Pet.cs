@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-    public abstract class Pet
+    public class Pet
     {
         private Dictionary<string, NewPet> spisok = new Dictionary<string, NewPet>();
 
@@ -21,7 +21,5 @@ namespace CourseApp
         public string Pearent1 {get; set; }
 
         public string Pearent2 {get; set; }
-
-        public int Kol {get; set; }
     }
 }

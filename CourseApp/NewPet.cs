@@ -23,5 +23,25 @@ namespace CourseApp
         this.Child.Add(child);
         this.Vid = v;
         }
+
+        public override string ToString()
+        {
+        string tostr = $"{Vid} {Name}";
+        if (Pearent1 != null || Pearent2 != null)
+        {
+            tostr += $", Родители: {Pearent1} и {Pearent2}";
+        }
+
+        if (Child != null)
+        {
+            tostr += $", Дети: ";
+            foreach(var j in Child)
+               {
+                tostr += $"{j} ";
+               }
+        }
+
+        return tostr;
+        }
     }
 }
