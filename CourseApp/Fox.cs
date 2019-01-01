@@ -7,7 +7,7 @@ namespace CourseApp
         public Fox()
     : base()
         {
-            Name = Name;
+            FoxName = Name;
             Age = 2;
         } // 1 конструктор (перекрытый)
 
@@ -18,16 +18,16 @@ namespace CourseApp
 
         public Fox(string name, string color, int age)
         {
-            Name = name;
+            FoxName = name;
             Color = color;
-            this.Age = age;
+            Age = age;
         } // 3 конструктор
 
-        public new string Name { get; set; }
+        public string FoxName { get; set; }
 
         public override void GetInfo()
         {
-            Console.WriteLine($"Имя: {Name} Цвет: {Color} Возраст: {Age}");
+            Console.WriteLine($"Имя: {FoxName} Цвет: {Color} Возраст: {Age}");
         }
 
         public override string Mut()

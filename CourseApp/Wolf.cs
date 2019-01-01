@@ -10,7 +10,7 @@ namespace CourseApp
     : base()
         {
             Age = 2;
-            Name = Name;
+            WolfName = Name;
             Color = Color;
         } // 1 конструктор (перекрытый)
 
@@ -21,21 +21,21 @@ namespace CourseApp
 
         public Wolf(string name, string color, int age)
         {
-            this.Name = name;
+            WolfName = name;
             Color = color;
             this.Age = age;
         } // 3 конструктор
 
-        public new string Name { get; set; }
+        public string WolfName { get; set; }
 
         public override string ToString()
         {
-            return $"Волк {Name} пошёл всех кусать, но его укусила лисица";
+            return $"Волк {WolfName} пошёл всех кусать, но его укусила лисица";
         }
 
         public override void GetInfo()
         {
-            Console.WriteLine($"Имя: {Name} Цвет: {Color} Возраст: {Age}");
+            Console.WriteLine($"Имя: {WolfName} Цвет: {Color} Возраст: {Age}");
         }
 
         public override string Mut()

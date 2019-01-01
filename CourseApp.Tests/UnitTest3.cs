@@ -11,7 +11,7 @@ namespace CourseApp.Tests
         public void Test8()
         {
             Wolf one = new Wolf();
-            var name = one.Name;
+            var name = one.WolfName;
             var age = one.Age;
             var color = one.Color;
             Assert.Equal("Неизвестное", name);
@@ -22,7 +22,7 @@ namespace CourseApp.Tests
         public void Test9()
         {
             Wolf two = new Wolf("Дикий", "Чёрный");
-            var name = two.Name;
+            var name = two.WolfName;
             var age = two.Age;
             var color = two.Color;
             Assert.Equal("Дикий", name);
@@ -33,7 +33,7 @@ namespace CourseApp.Tests
         public void Test10()
         {
             Wolf three = new Wolf("Третий", "Белый", 3);
-            var name = three.Name;
+            var name = three.WolfName;
             var age = three.Age;
             var color = three.Color;
             Assert.Equal("Третий", name);

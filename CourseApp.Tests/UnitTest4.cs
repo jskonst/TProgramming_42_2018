@@ -21,5 +21,27 @@ namespace CourseApp.Tests
 
             }
         }
+        [Fact]
+        public void Test14()
+        {
+            Animals[] animal = new Animals[2];
+            animal[0] = new Fox();
+            animal[1] = new Wolf();
+            Assert.Equal("Неизвестное", animal[0].Name);
+            Assert.Equal(2, animal[0].Age);
+            Assert.Equal("Прозрачный", animal[0].Color);
+            Assert.Equal("Неизвестное", animal[1].Name);
+            Assert.Equal(2, animal[1].Age);
+            Assert.Equal("Прозрачный", animal[1].Color);
+        }
+        [Fact]
+        public void Test15()
+        {
+            Animals[] animal = new Animals[2];
+            animal[0] = new Fox();
+            animal[1] = new Wolf();
+            Assert.Equal("Из-за странного корма все лисы мутировали, покорили мир и сделали людей своими рабами", animal[0].Mut());
+            Assert.Equal("Волки покорились мутировавшим лисицам", animal[1].Mut());
+        }
     }
 }
